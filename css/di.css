@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/fon.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    border-bottom: 2px solid #7f4abf; 
+}
+
+.logo img {
+    width: 100px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #7f4abf; 
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #9b6fd7;
+}
+
+.content {
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.diary-form {
+    background-color: rgba(63, 63, 68, 0.8);
+    padding: 20px;
+    margin: 20px auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 500px; 
+}
+
+label {
+    display: block; 
+    margin-bottom: 5px; 
+    color: #ffffff; 
+}
+
+textarea {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 15px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    resize: none; 
+}
+
+button {
+    background-color: #7f4abf; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: #9b6fd7; 
+}
+
+.diary-entries {
+    margin-top: 20px;
+}
+
+.entries-container {
+    background-color: rgba(63, 63, 68, 1); /* Непрозрачный фон */
+    border-radius: 10px; /* Закругленные углы */
+    padding: 20px; /* Отступ внутри рамки */
+    max-width: 500px; /* Ширина рамки */
+    margin: 0 auto; /* Центрирование */
+    border: 2px solid rgb(194, 0, 168); /* Цвет рамки черный */
+}
+
+#entriesList {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.entry {
+    background-color: rgba(63, 63, 68, 0.8); /* Рамка для записи */
+    margin: 10px 0; 
+    padding: 15px; 
+    border-radius: 5px; 
+    border: 1px solid rgb(212, 0, 255); /* Цвет рамки черный */
+}
+
+.entry-content {
+    display: flex;
+    flex-direction: column; /* Выравнивание по колонке */
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+.entry-title {
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+.entry-date {
+    font-size: 12px; 
+    color: #aaaaaa; 
+}
+
+.edit-button, .delete-button {
+    background-color: #7f4abf; /* Цвет кнопки */
+    color: white; 
+    padding: 5px 10px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    margin-top: 10px; 
+    align-self: center; /* Центрирование кнопки */
+}
+
+.edit-button:hover, .delete-button:hover {
+    background-color: #9b6fd7; /* Цвет кнопки при наведении */
+}
+
+/* Общие стили для текстового поля и рамок */
+textarea {
+    width: calc(100% - 20px); /* Уменьшаем ширину текстового поля, чтобы оно не выходило за рамку */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical; /* Позволяет изменять размер только по вертикали */
+    box-sizing: border-box; /* Учитываем отступы и границы в общей ширине */
+}
+
+/* Стили для рамки записей */
+.entries-container {
+    background-color: #000; /* Черный фон для рамки записей */
+    padding: 20px;
+    margin: 20px auto; /* Центрируем рамку */
+    border-radius: 10px;
+    max-width: 600px; 
+}
+
+@media (max-width: 600px) {
+    .navbar, .diary-form, .entries-container {
+        padding: 10px;
+    }
+
+    .menu a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .diary-form textarea {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .menu {
+        flex-direction: column; 
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0; 
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+
+    form {
+        padding: 15px; 
+    }
+}

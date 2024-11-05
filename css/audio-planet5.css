@@ -1,0 +1,141 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('../images/saturn.jpg'); 
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000000;
+    border-bottom: 2px solid #7f4abf; 
+}
+
+.logo img {
+    width: 100px;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin-left: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #7f4abf; 
+    border-radius: 5px;
+}
+
+.menu a:hover {
+    background-color: #9b6fd7;
+}
+
+
+.content {
+    padding: 40px;
+    color: white;
+    text-align: center;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px; 
+    background-color: #000; 
+    border: 5px solid #7f4abf; 
+    border-radius: 10px; 
+}
+
+.card {
+    background-color: #000000;
+    padding: 20px;
+    border: 3px solid #7f4abf; 
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; 
+    object-fit: cover;
+}
+
+.card h2 {
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.listen-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #7f4abf;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.listen-button:hover {
+    background-color: #9b6fd7;
+}
+
+
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr; 
+    }
+
+    .menu {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .menu li {
+        margin: 10px 0; 
+    }
+
+    .menu a {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+
+
+.planet-image {
+    width: 300px;  
+    height: auto;  
+    border: 2px solid #ccc;  
+    border-radius: 10px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    margin-bottom: 20px;  
+}
+
+.image-frame {
+    background-color: black; 
+    border: 5px solid #7f4abf; 
+    padding: 10px; 
+    display: inline-block; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+}
