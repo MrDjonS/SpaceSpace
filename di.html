@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Исследования</title>
-    <link rel="stylesheet" href="../css/di.css">
-    <link rel="stylesheet" href="../css/ad.css"> 
+    <link rel="stylesheet" href="./css/di.css">
+    <link rel="stylesheet" href="./css/ad.css"> 
 </head>
 <body>
     <header>
         <div class="navbar">
             <div class="logo">
-                <img src="../images/logo.png" alt="Planet Audio Logo">
+                <img src="./images/logo.png" alt="Planet Audio Logo">
             </div>
             <nav>
                 <ul class="menu">
@@ -47,15 +47,15 @@
     <footer>
         <div class="social-links">
             <a href="https://t.me/+2k2uLserH4xkYjcy" class="svg-button" target="_blank">
-                <img src="../images/telega.svg" alt="Telegram"> Телеграм-Группа
+                <img src="./images/telega.svg" alt="Telegram"> Телеграм-Группа
             </a>
             <a href="https://www.youtube.com/@mrsamrusseng" class="svg-button" target="_blank">
-                <img src="../images/you.svg" alt="YouTube"> YouTube-Канал
+                <img src="./images/you.svg" alt="YouTube"> YouTube-Канал
             </a>
 
             
                 <a href="https://discord.gg/4g6TFC75G3" class="svg-button" target="_blank">
-                    <img src="../images/discord.svg" alt="Telegram"> Дискорд-Игровой
+                    <img src="./images/discord.svg" alt="Telegram"> Дискорд-Игровой
                 </a>
         </div>
     </footer>
@@ -82,11 +82,11 @@
             entryItem.setAttribute('data-id', id || entryCount); 
             entryItem.innerHTML = `
                 <div class="entry-content">
-                    <h3 class="entry-title">Запись №${entryCount}</h3> <!-- Изменено на "Запись №1", "Запись №2" и т.д. -->
+                    <h3 class="entry-title">Запись №${entryCount}</h3> 
                     <p>${entry}</p>
                     <p class="entry-date">Дата: ${new Date().toISOString().split('T')[0]}</p>
                     <button class="edit-button" onclick="editEntry(this)">Изменить</button>
-                    <button class="delete-button" onclick="deleteEntry(this)">Удалить</button> <!-- Добавлено кнопка "Удалить" -->
+                    <button class="delete-button" onclick="deleteEntry(this)">Удалить</button>
                 </div>
             `;
             entryList.appendChild(entryItem);
