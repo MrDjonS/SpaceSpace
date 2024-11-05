@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Исследования</title>
+    <link rel="stylesheet" href="../css/di.css">
+    <link rel="stylesheet" href="../css/ad.css"> 
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Planet Audio Logo">
+            </div>
+            <nav>
+                <ul class="menu">
+                    <li><a href="./audio-planet.html">Дом</a></li>
+                    <li><button id="accountButton">Аккаунт</button></li>
+                    <li><a href="./about.html">О нас</a></li>
+                    <li><a href="./login.html" id="logout">Выйти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <h1>Исследования</h1> 
+            <div class="diary-form">
+                <form id="diaryForm">
+                    <label for="entry">Запись:</label>
+                    <textarea id="entry" rows="4" required></textarea>
+                    <button type="submit">Добавить запись</button>
+                </form>
+            </div>
+
+            <div class="diary-entries">
+                <h2>Записи:</h2>
+                <div class="entries-container" id="entriesContainer">
+                    <ul id="entriesList">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://t.me/+2k2uLserH4xkYjcy" class="svg-button" target="_blank">
+                <img src="../images/telega.svg" alt="Telegram"> Телеграм-Группа
+            </a>
+            <a href="https://www.youtube.com/@mrsamrusseng" class="svg-button" target="_blank">
+                <img src="../images/you.svg" alt="YouTube"> YouTube-Канал
+            </a>
+
+            
+                <a href="https://discord.gg/4g6TFC75G3" class="svg-button" target="_blank">
+                    <img src="../images/discord.svg" alt="Telegram"> Дискорд-Игровой
+                </a>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadEntries);
+
+        document.getElementById('diaryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const entry = document.getElementById('entry').value;
+            addEntry(entry);
+            document.getElementById('entry').value = ''; 
+        });
+        function loadEntries() {
+            const entries = JSON.parse(localStorage.getItem('diaryEntries')) || [];
+            entries.forEach(entry => {
+                addEntry(entry.text, entry.id);
+            });
+        }
+        function addEntry(entry, id) {
+            const entryList = document.getElementById('entriesList');
+            const entryItem = document.createElement('li');
+            const entryCount = entryList.children.length + 1; 
+            entryItem.classList.add('entry');
+            entryItem.setAttribute('data-id', id || entryCount); 
+            entryItem.innerHTML = `
+                <div class="entry-content">
+                    <h3 class="entry-title">Запись №${entryCount}</h3> <!-- Изменено на "Запись №1", "Запись №2" и т.д. -->
+                    <p>${entry}</p>
+                    <p class="entry-date">Дата: ${new Date().toISOString().split('T')[0]}</p>
+                    <button class="edit-button" onclick="editEntry(this)">Изменить</button>
+                    <button class="delete-button" onclick="deleteEntry(this)">Удалить</button> <!-- Добавлено кнопка "Удалить" -->
+                </div>
+            `;
+            entryList.appendChild(entryItem);
+            saveEntries(); 
+        }
+        function editEntry(button) {
+            const entryContent = button.parentElement;
+            const entryText = entryContent.querySelector('p').textContent;
+
+            const newEntry = prompt("Редактировать запись:", entryText);
+            if (newEntry) {
+                entryContent.querySelector('p').textContent = newEntry;
+                saveEntries(); 
+            }
+        }
+        function deleteEntry(button) {
+            const entryItem = button.parentElement.parentElement;
+            entryItem.remove();
+            saveEntries(); 
+        }
+        function saveEntries() {
+            const entries = [];
+            const entryList = document.getElementById('entriesList').children;
+
+            for (let item of entryList) {
+                const entryContent = item.querySelector('.entry-content');
+                const entryText = entryContent.querySelector('p').textContent;
+                const entryId = item.getAttribute('data-id');
+                entries.push({ id: entryId, text: entryText });
+            }
+            localStorage.setItem('diaryEntries', JSON.stringify(entries));
+        }
+    </script>
+</body>
+</html>
