@@ -47,6 +47,7 @@ body {
     padding: 40px;
     color: white;
     text-align: center;
+    
 }
 
 h1 {
@@ -86,9 +87,7 @@ button {
     cursor: pointer; 
     margin-top: -10px;
 }
-.sar{
-margin-top:-10px;
-}
+
 button:hover {
     background-color: #9b6fd7; 
 }
@@ -150,7 +149,6 @@ button:hover {
     background-color: #9b6fd7; /* Цвет кнопки при наведении */
 }
 
-/* Общие стили для текстового поля и рамок */
 textarea {
     width: calc(100% - 20px); /* Уменьшаем ширину текстового поля, чтобы оно не выходило за рамку */
     padding: 10px;
